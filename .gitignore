@@ -1,0 +1,17 @@
+# Build
+.build/
+.swiftpm/
+
+# IDE
+.idea/
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+.temp/
