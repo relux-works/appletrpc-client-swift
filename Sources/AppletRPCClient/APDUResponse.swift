@@ -76,6 +76,26 @@ public struct APDUResponse: Sendable {
         return hi | lo
     }
 
+    /// Read a big-endian unsigned 32-bit integer from the response data.
+    ///
+    /// - Parameter offset: Byte offset into ``data`` where the 4-byte value starts. Defaults to `0`.
+    /// - Returns: The `UInt32` value decoded from bytes `[offset, offset+3]`.
+    public func readU32(at offset: Int = 0) -> UInt32 {
+        let s = data.startIndex + offset
+        return (UInt32(data[s]) << 24)
+             | (UInt32(data[s + 1]) << 16)
+             | (UInt32(data[s + 2]) << 8)
+             | UInt32(data[s + 3])
+    }
+
+    /// Read a boolean from the response data (`0x00` = `false`, non-zero = `true`).
+    ///
+    /// - Parameter offset: Byte offset into ``data``. Defaults to `0`.
+    /// - Returns: `false` if the byte is `0x00`, `true` otherwise.
+    public func readBool(at offset: Int = 0) -> Bool {
+        data[data.startIndex + offset] != 0x00
+    }
+
     /// Read a contiguous byte slice from the response data.
     ///
     /// - Parameters:
