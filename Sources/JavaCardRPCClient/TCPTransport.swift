@@ -5,7 +5,7 @@ import Darwin
 import Glibc
 #endif
 
-/// TCP transport for the appletRPC bridge.
+/// TCP transport for the javacard-rpc bridge.
 ///
 /// Connects to a running bridge server over TCP and forwards APDUs using the
 /// bridge binary framing protocol:

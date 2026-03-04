@@ -7,7 +7,7 @@ import Foundation
 /// and consume ``APDUResponse`` values.
 ///
 /// Provided implementations:
-/// - ``TCPTransport`` — connects to the appletRPC bridge over TCP (dev/test).
+/// - ``TCPTransport`` — connects to the javacard-rpc bridge over TCP (dev/test).
 ///
 /// Bring your own for production:
 /// - `BLETransport` — CoreBluetooth to a real Java Card over NFC/BLE.

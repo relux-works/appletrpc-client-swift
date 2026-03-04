@@ -3,18 +3,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "appletrpc-client-swift",
+    name: "javacard-rpc-client-swift",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15),
     ],
     products: [
-        .library(name: "AppletRPCClient", targets: ["AppletRPCClient"]),
+        .library(name: "JavaCardRPCClient", targets: ["JavaCardRPCClient"]),
     ],
     targets: [
         .target(
-            name: "AppletRPCClient",
-            path: "Sources/AppletRPCClient"
+            name: "JavaCardRPCClient",
+            path: "Sources/JavaCardRPCClient"
         ),
     ]
 )
